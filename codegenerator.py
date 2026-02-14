@@ -40,19 +40,16 @@ with open("indexCodes.html", "r", encoding="utf-8") as file1, open("indexCodesFi
             newLines = linesEnd.copy()
             newLines[16] = f"                    You tried the code: <strong>{digit3}{digit2}{digit1}</strong> with the safe. <br><br>"
             newLines[32] = f"                        <li><a href='../../{back*home_path}'>The Beginning</a></li>"
-            if (digit2 != 0):
-                newLines.insert(33, f"                        <li><a href='../../{back*2}'>{digit3}</a></li>")
             if (digit3 != 0):
-
-                newLines.insert(32, f"                        <li><a href='../../{back}'>{digit2}</a></li>")
+                newLines.insert(33, f"                        <li><a href='../../{digit2}'>{digit2}</a></li>")
+            if (digit2 != 0):
+                newLines.insert(33, f"                        <li><a href='../../{back}{digit3}'>{digit3}</a></li>")
         else:
             newLines = linesNormal.copy()
             newLines[16] = f"                    Currently entered the code: <strong>{digit3 if (digit3 != 0) else ''}{digit2 if (digit2 != 0) else ''}{digit1}</strong> into the safe. <br><br>"
             newLines[36] = f"                        <li><a href='../../{back*home_path}'>The Beginning</a></li>"
             if (digit2 != 0):
-                newLines.insert(37, f"                        <li><a href='../../{back}'>{digit2}</a></li>")
-            if (digit3 != 0):
-                newLines.insert(36, f"                        <li><a href='../../{back*2}'>{digit3}</a></li>")
+                newLines.insert(37, f"                        <li><a href='../../{digit2}'>{digit2}</a></li>")
                 
         newOut = ""
         for l in newLines:
